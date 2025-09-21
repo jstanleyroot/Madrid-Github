@@ -5,9 +5,10 @@
     margin-right: calc(-50vw + 50%) !important;
     position: relative !important;
     font-family: Arial, sans-serif;
-    padding: 15px;
+    padding: 0;
     background-color: #f5f5f5;
     font-size: 13px;
+    min-height: 100vh;
 }
 
 .spain-calculator .main-title {
@@ -15,138 +16,158 @@
     color: #2c3e50;
     font-size: 22px;
     margin-bottom: 15px;
+    padding: 15px;
 }
 
-/* Main Calculator Grid - 4 columns, 3 rows */
+/* Main Calculator Grid - 6 columns with grey sides */
 .spain-calculator .container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 0.75fr 0.75fr 0.75fr 0.75fr 1fr;
     grid-template-rows: auto auto auto;
     gap: 12px;
+    padding: 15px;
     margin-bottom: 20px;
-    min-height: 70vh;
+    min-height: 80vh;
+    background: linear-gradient(
+        to right,
+        #d3d3d3 0%,
+        #d3d3d3 16.67%,
+        #f5f5f5 16.67%,
+        #f5f5f5 83.33%,
+        #d3d3d3 83.33%,
+        #d3d3d3 100%
+    );
 }
 
-/* Top Row - Input columns 1-3, Cashflow spans all rows in column 4 */
+/* Top Row - Input columns 2-4, Cashflow spans all rows in column 5 */
 .spain-calculator .financial-position {
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 1;
     background: white;
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .spain-calculator .property-details {
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 1;
     background: white;
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .spain-calculator .living-costs {
-    grid-column: 3;
-    grid-row: 1;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-/* Cashflow Analysis - spans full height in column 4, all rows */
-.spain-calculator .section-cashflow {
     grid-column: 4;
-    grid-row: 1 / -1;
+    grid-row: 1;
     background: white;
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Cashflow Analysis - spans full height in column 5, all rows */
+.spain-calculator .section-cashflow {
+    grid-column: 5;
+    grid-row: 1 / -1;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     overflow-y: auto;
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.8;
 }
 
 .spain-calculator .section-cashflow h3 {
-    font-size: 18px !important;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+    font-size: 20px !important;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    color: #8e44ad;
+    border-bottom: 3px solid #8e44ad;
 }
 
 .spain-calculator .section-cashflow .cost-item {
-    padding: 8px 0;
-    font-size: 13px;
-    margin-bottom: 3px;
+    padding: 12px 0;
+    font-size: 14px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #eee;
 }
 
 .spain-calculator .section-cashflow .cost-item.total {
-    padding: 12px;
-    margin: 15px 0;
-    font-size: 14px;
+    padding: 18px 15px;
+    margin: 20px 0;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 2px solid #343a40;
 }
 
 .spain-calculator .section-cashflow .cashflow-final-rows {
-    font-size: 14px !important;
-    padding: 15px;
-    margin: 10px 0;
+    font-size: 16px !important;
+    padding: 20px 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    font-weight: bold;
 }
 
-/* Affordability - spans ONLY columns 1-3, row 2 */
+.spain-calculator .section-cashflow > div[style*="margin: 15px 0"] {
+    margin: 25px 0 !important;
+    padding-top: 25px !important;
+}
+
+.spain-calculator .section-cashflow > div[style*="margin-top: 15px"] {
+    margin-top: 25px !important;
+    padding-top: 25px !important;
+}
+
+/* Affordability - spans ONLY columns 2-4, row 2 */
 .spain-calculator .affordability {
-    grid-column: 1 / 4;
+    grid-column: 2 / 5;
     grid-row: 2;
     background: white;
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Bottom Row - Output columns 1-3 SIDE BY SIDE, row 3 */
+/* Bottom Row - Output columns 2-4 SIDE BY SIDE, row 3 */
 .spain-calculator .section-funds {
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 3;
     background: white;
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .spain-calculator .section-purchase {
-    grid-column: 2;
+    grid-column: 3;
     grid-row: 3;
     background: white;
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .spain-calculator .capital-gains {
-    grid-column: 3;
+    grid-column: 4;
     grid-row: 3;
     background: white;
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Instructions moved to bottom - outside the grid */
+/* Instructions moved to bottom - outside the grid, hidden from main view */
 .spain-calculator .instructions {
     background: white;
-    padding: 20px;
+    padding: 30px;
+    margin: 40px 15px 20px 15px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    margin-top: 30px;
     border-top: 3px solid #3498db;
-}
-
-/* Remove the old results-section and bottom-sections that were causing problems */
-.spain-calculator .results-section {
-    /* This is now handled by the grid positioning above */
-}
-
-.spain-calculator .bottom-sections {
-    /* This is now handled by the grid positioning above */
 }
 
 .spain-calculator .instructions h2 {
@@ -391,47 +412,56 @@
 /* Responsive design for smaller screens */
 @media (max-width: 1200px) {
     .spain-calculator .container {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto auto auto;
+        grid-template-columns: 0.2fr 1fr 1fr 0.2fr;
+        grid-template-rows: auto auto auto auto auto;
+        background: linear-gradient(
+            to right,
+            #d3d3d3 0%,
+            #d3d3d3 12.5%,
+            #f5f5f5 12.5%,
+            #f5f5f5 87.5%,
+            #d3d3d3 87.5%,
+            #d3d3d3 100%
+        );
     }
     
     .spain-calculator .financial-position {
-        grid-column: 1;
+        grid-column: 2;
         grid-row: 1;
     }
     
     .spain-calculator .property-details {
-        grid-column: 2;
+        grid-column: 3;
         grid-row: 1;
     }
     
     .spain-calculator .living-costs {
-        grid-column: 1;
+        grid-column: 2;
         grid-row: 2;
     }
     
     .spain-calculator .affordability {
-        grid-column: 1 / 3;
+        grid-column: 2 / 4;
         grid-row: 3;
     }
     
     .spain-calculator .section-funds {
-        grid-column: 1;
+        grid-column: 2;
         grid-row: 4;
     }
     
     .spain-calculator .section-purchase {
-        grid-column: 2;
+        grid-column: 3;
         grid-row: 4;
     }
     
     .spain-calculator .capital-gains {
-        grid-column: 1;
+        grid-column: 2;
         grid-row: 5;
     }
     
     .spain-calculator .section-cashflow {
-        grid-column: 2;
+        grid-column: 3;
         grid-row: 2 / 6;
     }
 }
@@ -439,6 +469,7 @@
 @media (max-width: 768px) {
     .spain-calculator .container {
         grid-template-columns: 1fr;
+        background: #f5f5f5;
     }
     
     .spain-calculator .financial-position,
