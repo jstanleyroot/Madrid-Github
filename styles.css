@@ -1,1 +1,344 @@
+.spain-calculator {
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    position: relative !important;
+}
 
+.spain-calculator {
+    font-family: Arial, sans-serif;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #f5f5f5;
+    font-size: 13px;
+    min-height: 80vh;
+}
+
+.spain-calculator .main-title {
+    text-align: left;
+    color: #2c3e50;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.spain-calculator .container {
+    display: grid;
+    grid-template-columns: 1.84fr 1.27fr 1.27fr 1.27fr;
+    grid-template-rows: auto auto 1fr;
+    gap: 12px;
+    height: calc(90vh - 60px);
+}
+
+.spain-calculator .instructions {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow-y: auto;
+}
+
+.spain-calculator .financial-position {
+    grid-column: 2;
+    grid-row: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.spain-calculator .property-details {
+    grid-column: 3;
+    grid-row: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.spain-calculator .living-costs {
+    grid-column: 4;
+    grid-row: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.spain-calculator .affordability {
+    grid-column: 2 / 5;
+    grid-row: 2;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.spain-calculator .section-funds {
+    grid-column: 2;
+    grid-row: 3;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.spain-calculator .section-purchase {
+    grid-column: 3;
+    grid-row: 3;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.spain-calculator .section-cashflow {
+    grid-column: 4;
+    grid-row: 3;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.spain-calculator .instructions h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    font-size: 18px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #3498db;
+}
+
+.spain-calculator .instructions h3 {
+    color: #34495e;
+    font-size: 14px;
+    margin: 12px 0 6px 0;
+}
+
+.spain-calculator .instructions p {
+    margin: 6px 0;
+    line-height: 1.3;
+    color: #555;
+}
+
+.spain-calculator .affordability h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    font-size: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e74c3c;
+}
+
+.spain-calculator .results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+.spain-calculator .result-box {
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.spain-calculator .funds-available {
+    background-color: #e8f5e8;
+    border: 2px solid #27ae60;
+}
+
+.spain-calculator .total-cost {
+    background-color: #fef9e7;
+    border: 2px solid #f39c12;
+}
+
+.spain-calculator .affordability-result {
+    border: 2px solid #e74c3c;
+}
+
+.spain-calculator .buy-rent-decision {
+    border: 2px solid #9b59b6;
+}
+
+.spain-calculator .affordable {
+    background-color: #e8f5e8;
+    border-color: #27ae60;
+}
+
+.spain-calculator .not-affordable {
+    background-color: #fdf2f2;
+    border-color: #e74c3c;
+}
+
+.spain-calculator .buy-decision {
+    background-color: #e8f5e8;
+    border-color: #27ae60;
+}
+
+.spain-calculator .rent-decision {
+    background-color: #fdf2f2;
+    border-color: #e74c3c;
+}
+
+.spain-calculator .result-value {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.spain-calculator .result-label {
+    font-size: 11px;
+    color: #666;
+}
+
+.spain-calculator h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    font-size: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #3498db;
+}
+
+.spain-calculator h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    font-size: 16px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #27ae60;
+    margin-bottom: 8px;
+}
+
+.spain-calculator .living-costs h3 {
+    border-bottom-color: #3498db;
+}
+
+.spain-calculator .purchase-costs h3 {
+    border-bottom-color: #9b59b6;
+}
+
+.spain-calculator .cashflow-analysis h3 {
+    border-bottom-color: #8e44ad;
+}
+
+.spain-calculator .capital-gains h3 {
+    border-bottom-color: #2ecc71;
+}
+
+.spain-calculator .copyright {
+    margin-top: auto;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 11px;
+    color: #666;
+    border-top: 1px solid #ddd;
+}
+
+.spain-calculator .input-group {
+    margin-bottom: 8px;
+}
+
+.spain-calculator label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+    color: #34495e;
+    font-size: 12px;
+}
+
+.spain-calculator .label-number {
+    background: #3498db;
+    color: white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    margin-right: 5px;
+}
+
+.spain-calculator input, .spain-calculator select {
+    width: 100%;
+    padding: 3px 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 12px;
+    height: 24px;
+}
+
+.spain-calculator input:focus, .spain-calculator select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.spain-calculator .breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 12px;
+}
+
+.spain-calculator .breakdown-total {
+    font-weight: bold;
+    border-top: 2px solid #343a40;
+    border-bottom: none;
+    margin-top: 8px;
+    background-color: #f8f9fa;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.spain-calculator .breakdown-highlight {
+    background-color: #fce4ec !important;
+    color: #e91e63 !important;
+    font-weight: bold;
+}
+
+.spain-calculator .monthly-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 12px;
+}
+
+.spain-calculator .monthly-item.highlight {
+    font-weight: bold;
+    background-color: #e3f2fd;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    margin: 4px 0;
+}
+
+.spain-calculator .cost-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 11px;
+}
+
+.spain-calculator .cost-item.total {
+    font-weight: bold;
+    border-top: 2px solid #343a40;
+    border-bottom: none;
+    margin-top: 8px;
+    font-size: 12px;
+    background-color: #f8f9fa;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.spain-calculator .negative-value {
+    color: #dc2626 !important;
+}
+
+.spain-calculator .cashflow-final-rows {
+    font-size: 12px !important;
+}
