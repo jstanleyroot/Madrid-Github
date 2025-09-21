@@ -112,9 +112,10 @@ function calculate() {
         const maxRecommended = monthlyIncome * 0.35;
         const remainingIncome = monthlyIncome - monthlyPayment;
 
-        // Cashflow Analysis Calculations
-        const deposit = savings + familyHelp; // Amount from own funds
-        const initialInvestment = deposit + furnitureBudget;
+        // Cashflow Analysis Calculations - CORRECTED INITIAL INVESTMENT
+        // Initial Investment = Total Cost - Mortgage Amount (what you actually pay upfront)
+        const initialInvestment = totalCost - mortgageAmount;
+        
         const totalMortgagePayments = monthlyPayment * 12 * yearsBeforeSale;
         const annualLivingCosts = homeInsurance + propertyTax + communityFees + maintenance;
         const totalLivingCosts = annualLivingCosts * yearsBeforeSale;
@@ -209,7 +210,7 @@ function calculate() {
         document.getElementById('contingency').textContent = formatCurrency(contingency);
         document.getElementById('totalPurchaseFees').textContent = formatCurrency(totalPurchaseFees);
 
-        // Update cashflow analysis
+        // Update cashflow analysis - CORRECTED INITIAL INVESTMENT
         document.getElementById('initialInvestment').textContent = formatCurrency(initialInvestment);
         document.getElementById('totalMortgagePayments').textContent = formatCurrency(totalMortgagePayments);
         document.getElementById('totalLivingCosts').textContent = formatCurrency(totalLivingCosts);
