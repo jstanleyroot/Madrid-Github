@@ -17,75 +17,69 @@
     margin-bottom: 15px;
 }
 
-/* Main Calculator Grid - 4 columns, cashflow spans full height */
+/* Main Calculator Grid - 4 columns, 3 rows */
 .spain-calculator .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
     gap: 12px;
     margin-bottom: 20px;
     min-height: 70vh;
 }
 
+/* Top Row - Input columns 1-3, Cashflow spans all rows in column 4 */
 .spain-calculator .financial-position {
     grid-column: 1;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    height: fit-content;
-}
-
-.spain-calculator .property-details {
-    grid-column: 2;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    height: fit-content;
-}
-
-.spain-calculator .living-costs {
-    grid-column: 3;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    height: fit-content;
-}
-
-/* Cashflow Analysis - spans full height in column 4 */
-.spain-calculator .section-cashflow {
-    grid-column: 4;
     grid-row: 1;
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    align-self: stretch;
-    overflow-y: auto;
 }
 
-/* Results Section - spans full width below main grid */
-.spain-calculator .results-section {
-    margin-bottom: 20px;
-}
-
-.spain-calculator .affordability {
+.spain-calculator .property-details {
+    grid-column: 2;
+    grid-row: 1;
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    margin-bottom: 15px;
 }
 
-/* Bottom sections in 3-column layout */
-.spain-calculator .bottom-sections {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 12px;
+.spain-calculator .living-costs {
+    grid-column: 3;
+    grid-row: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+/* Cashflow Analysis - spans full height in column 4, all rows */
+.spain-calculator .section-cashflow {
+    grid-column: 4;
+    grid-row: 1 / 4;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    overflow-y: auto;
+}
+
+/* Affordability - spans columns 1-3, row 2 */
+.spain-calculator .affordability {
+    grid-column: 1 / 4;
+    grid-row: 2;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Bottom Row - Output columns 1-3, row 3 */
 .spain-calculator .section-funds {
+    grid-column: 1;
+    grid-row: 3;
     background: white;
     padding: 20px;
     border-radius: 10px;
@@ -93,6 +87,8 @@
 }
 
 .spain-calculator .section-purchase {
+    grid-column: 2;
+    grid-row: 3;
     background: white;
     padding: 20px;
     border-radius: 10px;
@@ -100,13 +96,15 @@
 }
 
 .spain-calculator .capital-gains {
+    grid-column: 3;
+    grid-row: 3;
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Instructions moved to bottom */
+/* Instructions moved to bottom - outside the grid */
 .spain-calculator .instructions {
     background: white;
     padding: 20px;
@@ -114,6 +112,15 @@
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     margin-top: 30px;
     border-top: 3px solid #3498db;
+}
+
+/* Remove the old results-section and bottom-sections that were causing problems */
+.spain-calculator .results-section {
+    /* This is now handled by the grid positioning above */
+}
+
+.spain-calculator .bottom-sections {
+    /* This is now handled by the grid positioning above */
 }
 
 .spain-calculator .instructions h2 {
@@ -359,7 +366,7 @@
 @media (max-width: 1200px) {
     .spain-calculator .container {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
+        grid-template-rows: auto auto auto auto;
     }
     
     .spain-calculator .financial-position {
@@ -377,14 +384,29 @@
         grid-row: 2;
     }
     
-    .spain-calculator .section-cashflow {
-        grid-column: 2;
-        grid-row: 2;
+    .spain-calculator .affordability {
+        grid-column: 1 / 3;
+        grid-row: 3;
     }
     
-    .spain-calculator .bottom-sections {
-        grid-template-columns: 1fr;
-        gap: 15px;
+    .spain-calculator .section-funds {
+        grid-column: 1;
+        grid-row: 4;
+    }
+    
+    .spain-calculator .section-purchase {
+        grid-column: 2;
+        grid-row: 4;
+    }
+    
+    .spain-calculator .capital-gains {
+        grid-column: 1;
+        grid-row: 5;
+    }
+    
+    .spain-calculator .section-cashflow {
+        grid-column: 2;
+        grid-row: 2 / 6;
     }
 }
 
@@ -396,6 +418,10 @@
     .spain-calculator .financial-position,
     .spain-calculator .property-details,
     .spain-calculator .living-costs,
+    .spain-calculator .affordability,
+    .spain-calculator .section-funds,
+    .spain-calculator .section-purchase,
+    .spain-calculator .capital-gains,
     .spain-calculator .section-cashflow {
         grid-column: 1;
         grid-row: auto;
